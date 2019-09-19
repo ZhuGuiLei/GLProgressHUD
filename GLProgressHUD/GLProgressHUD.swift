@@ -8,10 +8,13 @@
 
 import UIKit
 import SVProgressHUD
+import MBProgressHUD
 
 class GLProgressHUD: NSObject {
 
     static let delay: TimeInterval = 3
+    
+    static let fontSize: CGFloat = 16
     
     class func initConfig() {
         
@@ -22,7 +25,7 @@ class GLProgressHUD: NSObject {
         // 圆角
         SVProgressHUD.setCornerRadius(5)
         // 字体大小
-        SVProgressHUD.setFont(UIFont.systemFont(ofSize: 16))
+        SVProgressHUD.setFont(UIFont.systemFont(ofSize: fontSize))
         // 动画类型
         SVProgressHUD.setDefaultAnimationType(.native)
         // 用户是否可以做其他操作
@@ -35,6 +38,39 @@ class GLProgressHUD: NSObject {
     }
     
     
+    
+    /// 显示文字信息
+    ///
+    /// - Parameter msg: 文字信息
+    class func show(msg: String?) {
+        self.show(msg: msg, to: nil)
+    }
+    
+    class func show(msg: String?, to view: UIView?) {
+        var sup: UIView
+        if view != nil {
+            sup = view!
+        } else {
+            sup = UIApplication.shared.keyWindow!
+        }
+        let hud = MBProgressHUD.showAdded(to: sup, animated: true)
+        hud.label.text = msg
+        hud.label.font = UIFont.systemFont(ofSize: fontSize)
+        hud.contentColor = UIColor.white
+        // 背景颜色
+        hud.bezelView.backgroundColor = UIColor.black
+        // 再设置模式
+        hud.mode = .customView
+        // 隐藏时候从父控件中移除
+        hud.removeFromSuperViewOnHide = true
+        // 边距
+        hud.margin = 8
+        // 显示时用户可否进行其他操作，NO可以，YES不可以
+        hud.isUserInteractionEnabled = false
+        // 1秒之后再消失
+        hud.hide(animated: true, afterDelay: delay)
+    }
+    
     /// 修改文字信息
     ///
     /// - Parameter msg: 文字信息
@@ -42,6 +78,9 @@ class GLProgressHUD: NSObject {
         SVProgressHUD.setStatus(msg)
     }
     
+    
+    
+//MARK: - 菊花
     /// 菊花
     class func showIndicator() {
         SVProgressHUD.show()
@@ -52,6 +91,9 @@ class GLProgressHUD: NSObject {
         SVProgressHUD.show(withStatus: msg)
     }
     
+    
+    
+//MARK: - dismiss
     class func dismissAll() {
         SVProgressHUD.dismiss()
     }
@@ -60,6 +102,9 @@ class GLProgressHUD: NSObject {
         SVProgressHUD.popActivity()
     }
     
+    
+    
+//MARK: - 进度
     /// 显示进度
     ///
     /// - Parameter progress: 0.0-1.0进度
@@ -77,14 +122,9 @@ class GLProgressHUD: NSObject {
     }
     
     
-    /// 显示文字信息
-    ///
-    /// - Parameter msg: 文字信息
-    class func show(msg: String?) {
-        SVProgressHUD.show(UIImage(), status: msg)
-        SVProgressHUD.dismiss(withDelay: delay)
-    }
     
+    
+//MARK: - 图片文字
     /// 显示信息图片和文字信息
     ///
     /// - Parameter msg: 文字信息
