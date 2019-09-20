@@ -13,6 +13,7 @@
 		184E99C72333975E0067BF71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184E99C62333975E0067BF71 /* Assets.xcassets */; };
 		184E99CA2333975E0067BF71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184E99C82333975E0067BF71 /* LaunchScreen.storyboard */; };
 		18874664233399D5009B6283 /* GLProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18874663233399D5009B6283 /* GLProgressHUD.swift */; };
+		18A455602334E88E00232CF0 /* apple-app-site-association in Sources */ = {isa = PBXBuildFile; fileRef = 18A4555F2334E88E00232CF0 /* apple-app-site-association */; };
 		BA4FF5C7A1BBDD6612422121 /* Pods_GLProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3C477582A301CEFA22E0B1 /* Pods_GLProgressHUD.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,8 @@
 		184E99C92333975E0067BF71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		184E99CB2333975E0067BF71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18874663233399D5009B6283 /* GLProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLProgressHUD.swift; sourceTree = "<group>"; };
+		18A4555E2334E88D00232CF0 /* GLProgressHUD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLProgressHUD-Bridging-Header.h"; sourceTree = "<group>"; };
+		18A4555F2334E88E00232CF0 /* apple-app-site-association */ = {isa = PBXFileReference; lastKnownFileType = text; path = "apple-app-site-association"; sourceTree = SOURCE_ROOT; };
 		A4536C99C3A1B7B64696388E /* Pods-GLProgressHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLProgressHUD.debug.xcconfig"; path = "Target Support Files/Pods-GLProgressHUD/Pods-GLProgressHUD.debug.xcconfig"; sourceTree = "<group>"; };
 		DC3C477582A301CEFA22E0B1 /* Pods_GLProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GLProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1604274CDBD345C82C49CAF /* Pods-GLProgressHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLProgressHUD.release.xcconfig"; path = "Target Support Files/Pods-GLProgressHUD/Pods-GLProgressHUD.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 				184E99C62333975E0067BF71 /* Assets.xcassets */,
 				184E99C82333975E0067BF71 /* LaunchScreen.storyboard */,
 				184E99CB2333975E0067BF71 /* Info.plist */,
+				18A4555F2334E88E00232CF0 /* apple-app-site-association */,
+				18A4555E2334E88D00232CF0 /* GLProgressHUD-Bridging-Header.h */,
 			);
 			path = GLProgressHUD;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 				TargetAttributes = {
 					184E99BB2333975C0067BF71 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -209,6 +215,7 @@
 				184E99C22333975C0067BF71 /* ViewController.swift in Sources */,
 				18874664233399D5009B6283 /* GLProgressHUD.swift in Sources */,
 				184E99C02333975C0067BF71 /* AppDelegate.swift in Sources */,
+				18A455602334E88E00232CF0 /* apple-app-site-association in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +362,7 @@
 			baseConfigurationReference = A4536C99C3A1B7B64696388E /* Pods-GLProgressHUD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WWTD6G9KA5;
 				INFOPLIST_FILE = GLProgressHUD/Info.plist;
@@ -364,6 +372,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lingjiang.GLProgressHUD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GLProgressHUD/GLProgressHUD-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -374,6 +384,7 @@
 			baseConfigurationReference = F1604274CDBD345C82C49CAF /* Pods-GLProgressHUD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WWTD6G9KA5;
 				INFOPLIST_FILE = GLProgressHUD/Info.plist;
@@ -383,6 +394,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lingjiang.GLProgressHUD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GLProgressHUD/GLProgressHUD-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
