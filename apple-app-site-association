@@ -4,7 +4,7 @@
         "details": [
                     {
                         "appID": "WWTD6G9KA5.com.yingyan.zhaobiao",
-                        "paths": ["*"]
+                        "paths": ["*", "/qq_conn/1481020086/*"]
                     }
                     ]
     }
